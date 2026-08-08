@@ -1,8 +1,6 @@
 # Enterprise Storage Cost Optimization via LVM Thin Provisioning & Automated Monitoring
 
-[![Linux](https://shields.io)](https://almalinux.org)
-[![LVM2](https://shields.io)](https://sourceware.org)
-[![Bash](https://shields.io)](https://gnu.org)
+Links: [AlmaLinux / RHEL](https://almalinux.org) | [LVM2 / XFS Storage](https://sourceware.org) | [Bash Shell Automation](https://gnu.org)
 
 Demonstrates eliminating over-provisioning and idle storage costs on Linux using LVM2 Thin Provisioning, complete with an automated monitoring script to manage oversubscription risks.
 
