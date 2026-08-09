@@ -15,7 +15,9 @@ A host-level storage project using `mdadm` to build a mirrored (RAID1) array wit
 
 ---
 
-## Architecture
+## 🏗️ The Architectural Landscape
+
+This setup maps data redundancy across multiple raw storage blocks directly at the Linux kernel layer.
 
 ```mermaid
 graph TD
@@ -24,6 +26,7 @@ graph TD
     PV3[Hot Spare /dev/sda] -.->|Auto Failover & Sync| MD0
     MD0 -->|Formatted XFS Filesystem| MountPath[/mnt/secure_vault]
 ```
+
 
 `/dev/sdb` and `/dev/sdc` are the active mirror. `/dev/sda` sits idle as the hot spare until a mirror disk fails, at which point the kernel promotes it automatically. A fourth disk, `/dev/sdd`, is present on the host but isn't part of this array.
 
