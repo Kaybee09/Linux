@@ -24,7 +24,6 @@ graph TD
     PV1[Raw Disk /dev/sdb] --> MD0[RAID1 Array /dev/md0]
     PV2[Raw Disk /dev/sdc] --> MD0
     PV3[Hot Spare /dev/sda] -.->|Auto Failover & Sync| MD0
-    MD0 -->|Formatted XFS Filesystem| MountPath[/mnt/secure_vault]
 ```
 
 
