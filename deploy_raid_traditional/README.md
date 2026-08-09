@@ -19,10 +19,10 @@ A host-level storage project using `mdadm` to build a mirrored (RAID1) array wit
 
 ```mermaid
 graph TD
-    D1[Disk: /dev/sdb] --> MD0[RAID1 Array: /dev/md0]
-    D2[Disk: /dev/sdc] --> MD0
-    D3[Hot Spare: /dev/sda] -.->|auto failover| MD0
-    MD0 -->|XFS| MountPath[/mnt/secure_vault]
+    PV1[Raw Disk /dev/sdb] --> MD0[RAID1 Array /dev/md0]
+    PV2[Raw Disk /dev/sdc] --> MD0
+    PV3[Hot Spare /dev/sda] -.->|Auto Failover & Sync| MD0
+    MD0 -->|Formatted XFS Filesystem| MountPath[/mnt/secure_vault]
 ```
 
 `/dev/sdb` and `/dev/sdc` are the active mirror. `/dev/sda` sits idle as the hot spare until a mirror disk fails, at which point the kernel promotes it automatically. A fourth disk, `/dev/sdd`, is present on the host but isn't part of this array.
